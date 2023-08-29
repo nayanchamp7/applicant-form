@@ -1,0 +1,47 @@
+{
+  "name": "wooocommerce-faq",
+  "version": "1.0.0",
+  "description": "Woocommerce FAQ is a wordpress plugin to show per product faqs for the visitors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpfeel/faq-for-woocommerce.git"
+  },
+  "keywords": [
+    "woocommerce",
+    "faqs"
+  ],
+  "author": "wpfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpfeel/faq-for-woocommerce/issues"
+  },
+  "homepage": "https://github.com/wpfeel/faq-for-woocommerce#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-checktextdomain": "^2.2.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-js-prettify": "^0.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wp-pot": "^2.5.0",
+    "gulp-zip": "^5.1.0",
+    "sass": "^1.43.5",
+    "wp-textdomain": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp-util": "^3.0.8"
+  }
+}
