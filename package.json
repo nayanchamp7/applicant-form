@@ -1,25 +1,20 @@
 {
-  "name": "wooocommerce-faq",
+  "name": "applicant-form",
   "version": "1.0.0",
-  "description": "Woocommerce FAQ is a wordpress plugin to show per product faqs for the visitors.",
+  "description": "A simple form to collect applicant information.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wpfeel/faq-for-woocommerce.git"
+    "url": "git@github.com:nayanchamp7/applicant-form.git"
   },
   "keywords": [
-    "woocommerce",
-    "faqs"
+    "wordpress"
   ],
-  "author": "wpfeel",
+  "author": "Nayan",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wpfeel/faq-for-woocommerce/issues"
-  },
-  "homepage": "https://github.com/wpfeel/faq-for-woocommerce#readme",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
