@@ -44,3 +44,25 @@ if ( ! defined( 'AFM_PLUGIN_URL' ) ) {
     define( 'AFM_PLUGIN_URL', plugins_url( '', AFM_FILE ) );
 }
 
+
+// Include the main Applicant_Form class.
+include_once AFM_FILE_DIR . '/includes/class-applicant-form.php';
+
+/**
+ * Returns the main instance of Applicant_Form.
+ *
+ * @since  1.0.0
+ * @return Applicant_Form
+ */
+function afm_init() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+    return Applicant_Form::instance();
+}
+
+add_action('plugins_loaded', 'afm_plugins_loaded');
+function afm_plugins_loaded() {
+	// Global for backwards compatibility.
+	if ( function_exists( 'afm_init' ) ) {
+		$GLOBALS['afm_init'] = afm_init();
+	}
+}
+
