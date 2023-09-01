@@ -44,6 +44,9 @@ if ( ! defined( 'AFM_PLUGIN_URL' ) ) {
     define( 'AFM_PLUGIN_URL', plugins_url( '', AFM_FILE ) );
 }
 
+if ( ! defined( 'AFM_FORM_TABLE' ) ) {
+    define( 'AFM_FORM_TABLE', "afm_form_entries" );
+}
 
 // Include the main Applicant_Form class.
 include_once AFM_FILE_DIR . '/includes/class-applicant-form.php';
@@ -58,11 +61,43 @@ function afm_init() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionN
     return Applicant_Form::instance();
 }
 
-add_action('plugins_loaded', 'afm_plugins_loaded');
+/**
+ * Load `Applicant Form` Plugin when all plugins loaded
+ */
 function afm_plugins_loaded() {
 	// Global for backwards compatibility.
 	if ( function_exists( 'afm_init' ) ) {
 		$GLOBALS['afm_init'] = afm_init();
 	}
 }
+add_action('plugins_loaded', 'afm_plugins_loaded');
+
+/**
+ * Create database tables.
+ */
+function afm_create_database_tables() {
+
+	global $wpdb;
+	$attachment_post_table  = $wpdb->prefix . 'posts';
+	$form_table = $wpdb->prefix . AFM_FORM_TABLE;
+	$charset_collate  = $wpdb->get_charset_collate();
+
+	$sql = "CREATE TABLE IF NOT EXISTS $form_table (
+		id BIGINT(20) NOT NULL AUTO_INCREMENT,
+		first_name VARCHAR(20) NOT NULL,
+		last_name VARCHAR(20) NOT NULL,
+		email VARCHAR(20) NOT NULL,
+		mobile VARCHAR(20) NOT NULL,
+		post_name VARCHAR(200) NOT NULL,
+		present_address VARCHAR(200) NOT NULL,
+		cv_attachment_id BIGINT(20) NOT NULL,
+		submission_time DATETIME NOT NULL,
+		PRIMARY KEY  (`id`)
+	) $charset_collate;\n";
+
+	include_once ABSPATH . 'wp-admin/includes/upgrade.php';
+	dbDelta( $sql );
+
+}
+register_activation_hook( AFM_FILE, 'afm_create_database_tables' );
 

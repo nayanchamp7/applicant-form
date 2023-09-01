@@ -28,6 +28,7 @@ if ( ! class_exists( 'Applicant_Form' ) ) {
 		}
 
 		public function includes() {
+			require_once dirname( __FILE__ ) . '/class-applicant-form-database.php';
 			require_once dirname( __FILE__ ) . '/class-applicant-form-assets.php';
 			require_once dirname( __FILE__ ) . '/class-applicant-form-shortcode.php';
 		}
@@ -38,9 +39,9 @@ if ( ! class_exists( 'Applicant_Form' ) ) {
 		}
 
 		public function init() {
+			new Applicant_Form_Database();
 			new Applicant_Form_Assets();
             new Applicant_Form_Shortcode();
-
 		}
 
 		public function language() {
