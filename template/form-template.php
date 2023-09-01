@@ -1,6 +1,9 @@
 <div class="afm-wrapper">
     <div class="afm-container">
         <h2>Applicant Form</h2>
+        <div class="afm-loader afm-hide">
+            <img src="<?php echo AFM_PLUGIN_URL . "/assets/public/images/loader.gif"; ?>" alt="Loader">
+        </div>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="afm-form-control">
                 <label for="first_name">First Name</label>

@@ -5,6 +5,7 @@
 .afm-wrapper {
     background: #fefefe;
     padding: 20px;
+    position: relative;
 
     p {
         margin: 0;
@@ -14,6 +15,26 @@
         max-width: 480px;
         width: 100%;
         margin: 0 auto;
+
+        .afm-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgb(241 242 243 / 70%);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        .afm-hide {
+            display: none;
+        }
 
         form{
             .afm-form-control {

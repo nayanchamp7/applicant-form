@@ -24,7 +24,41 @@ jQuery(document).ready(function ($) {
             const formData = new FormData(event.target);
             const entries = Object.fromEntries(formData);
 
-            $.applicantForm.validateInputs(entries);
+            const validated = $.applicantForm.validateInputs(entries);
+
+            console.log(entries);
+            console.log(entries.resume);
+
+            console.log(typeof entries.resume);
+
+            //add action hook to the form data
+            formData.append("action", "afm_submit_form_data");
+
+            if( validated ) {
+                //show loader
+                $(".afm-loader").removeClass("afm-hide");
+                
+                $.ajax({
+                    method: "POST",
+                    url: afm_script.ajaxurl,
+                    dataType: "json",
+                    processData : false,
+                    contentType: false,
+                    data: formData,
+                })
+                .done(function( response ) {
+                    console.log(response);
+                    //hide loader after a few while
+                    setTimeout(function() {
+                        $(".afm-loader").addClass("afm-hide");
+                    }, 1000)
+                    
+                    if( !response.sucess ) {
+                        alert(response.data);
+                    }
+                });
+            }
+
         },
         validateInputs: function(entries) {
 
@@ -33,9 +67,11 @@ jQuery(document).ready(function ($) {
                     if( key === 'email' ) {
                         
                     }
-                    console.log(`${key}: ${entries[key]}`);
+                    //console.log(`${key}: ${entries[key]}`);
                 }
             }
+
+            return true;
         }
 
     };

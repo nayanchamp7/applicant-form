@@ -1,4 +1,5 @@
 <?php
+namespace Application_Form;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -56,6 +57,9 @@ if ( ! class_exists( 'Applicant_Form_Assets' ) ) {
 
             // Register form script.
             wp_register_script( 'afm_script', AFM_PLUGIN_URL . '/assets/public/js/script.js', array( 'jquery' ), time(), true );
+            wp_localize_script( 'afm_script', 'afm_script', [
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			] );
 
         }
 	}

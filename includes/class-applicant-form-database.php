@@ -1,4 +1,5 @@
 <?php
+namespace Application_Form;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -33,6 +34,30 @@ if ( ! class_exists( 'Applicant_Form_Database' ) ) {
 
 		public function hooks() {
             
+		}
+
+		public static function insert($table, $data, $format) {
+			if( empty($table) ) {
+				return false;
+			}
+
+            global $wpdb;
+
+			//set the table name with prefix
+            $prefix = $wpdb->prefix;
+			$table = $prefix.$table;
+
+			//insert query
+			$inserted  = $wpdb->insert( $table, $data, $format );
+			
+			$insert_id = false;
+			if( $inserted ) {
+				$insert_id = $wpdb->insert_id;
+			}else {
+				$wpdb->print_error();
+			}
+
+			return $insert_id;
 		}
 
 		public function init() {

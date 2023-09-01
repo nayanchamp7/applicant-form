@@ -13,7 +13,7 @@ if ( ! class_exists( 'Applicant_Form' ) ) {
         private static $instance = null;
 
 		public function __construct() {
-			$this->includes();
+			$this->dependency_inserter();
 			$this->hooks();
 			$this->init();
 			do_action( 'afm_loaded', $this );
@@ -27,10 +27,9 @@ if ( ! class_exists( 'Applicant_Form' ) ) {
 			return self::$instance;
 		}
 
-		public function includes() {
-			require_once dirname( __FILE__ ) . '/class-applicant-form-database.php';
-			require_once dirname( __FILE__ ) . '/class-applicant-form-assets.php';
-			require_once dirname( __FILE__ ) . '/class-applicant-form-shortcode.php';
+		public function dependency_inserter() {
+			//include the autoload 
+			require_once AFM_FILE_DIR . '/includes/autoload.php';
 		}
 
 		public function hooks() {
@@ -39,9 +38,10 @@ if ( ! class_exists( 'Applicant_Form' ) ) {
 		}
 
 		public function init() {
-			new Applicant_Form_Database();
-			new Applicant_Form_Assets();
-            new Applicant_Form_Shortcode();
+			new Application_Form\Applicant_Form_Database();
+			new Application_Form\Applicant_Form_Assets();
+            new Application_Form\Applicant_Form_Shortcode();
+            new Application_Form\Applicant_Form_Ajax();
 		}
 
 		public function language() {

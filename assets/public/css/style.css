@@ -5,6 +5,7 @@
 .afm-wrapper {
   background: #fefefe;
   padding: 20px;
+  position: relative;
 }
 .afm-wrapper p {
   margin: 0;
@@ -13,6 +14,23 @@
   max-width: 480px;
   width: 100%;
   margin: 0 auto;
+}
+.afm-wrapper .afm-container .afm-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(241, 242, 243, 0.7);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.afm-wrapper .afm-container .afm-loader img {
+  width: 30px;
+}
+.afm-wrapper .afm-container .afm-hide {
+  display: none;
 }
 .afm-wrapper .afm-container form .afm-form-control {
   display: flex;

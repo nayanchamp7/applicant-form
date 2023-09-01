@@ -1,4 +1,5 @@
 <?php
+namespace Application_Form;
 
 defined( 'ABSPATH' ) || exit;
 

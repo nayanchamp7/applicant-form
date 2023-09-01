@@ -84,10 +84,10 @@ function afm_create_database_tables() {
 
 	$sql = "CREATE TABLE IF NOT EXISTS $form_table (
 		id BIGINT(20) NOT NULL AUTO_INCREMENT,
-		first_name VARCHAR(20) NOT NULL,
-		last_name VARCHAR(20) NOT NULL,
-		email VARCHAR(20) NOT NULL,
-		mobile VARCHAR(20) NOT NULL,
+		first_name VARCHAR(200) NOT NULL,
+		last_name VARCHAR(200) NOT NULL,
+		email VARCHAR(200) NOT NULL,
+		mobile VARCHAR(200) NOT NULL,
 		post_name VARCHAR(200) NOT NULL,
 		present_address VARCHAR(200) NOT NULL,
 		cv_attachment_id BIGINT(20) NOT NULL,
