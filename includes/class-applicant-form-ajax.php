@@ -162,11 +162,14 @@ if ( ! class_exists( 'Applicant_Form_Ajax' ) ) {
             
             // send mail after successfully data inserted
             if ( $insert_id ) {
-                $contact_name = $first_name . " " . $last_name;
-                $contact_message = "";
+                //set mail arguments
+                $args['email'] = $email;
+                $args['contact_name'] = $first_name . " " . $last_name;
+                $args['subject'] = __("Application Recieved!", "application-form");
+                $args['contact_message'] = "";
 
                 //send mail action
-                do_action( 'afm_trigger_send_applicant_mail', $contact_name, $email, $contact_message );
+                do_action( 'afm_trigger_send_applicant_mail', $args );
                 
                 $message = __( 'Email sent successfully!', 'applicant-form' );
                 wp_send_json_success( $message );

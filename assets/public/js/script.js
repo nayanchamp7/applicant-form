@@ -21,7 +21,8 @@ jQuery(document).ready(function ($) {
         submitForm: function (event) {
             event.preventDefault();
 
-            const formData = new FormData(event.target);
+            const form = event.target;
+            const formData = new FormData(form);
             const entries = Object.fromEntries(formData);
 
             const validated = $.applicantForm.validateInputs(entries);
@@ -51,6 +52,7 @@ jQuery(document).ready(function ($) {
                     //hide loader after a few while
                     setTimeout(function() {
                         $(".afm-loader").addClass("afm-hide");
+                        form.reset();
                     }, 1000)
                     
                     if( !response.sucess ) {

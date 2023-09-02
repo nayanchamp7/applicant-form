@@ -42,6 +42,7 @@ if ( ! class_exists( 'Applicant_Form' ) ) {
 			new Application_Form\Applicant_Form_Assets();
             new Application_Form\Applicant_Form_Shortcode();
             new Application_Form\Applicant_Form_Ajax();
+            new Application_Form\Applicant_Form_Mail();
 		}
 
 		public function language() {
