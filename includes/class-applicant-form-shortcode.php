@@ -1,59 +1,113 @@
 <?php
+/**
+ * Shortcode Class
+ *
+ * @category Shortcode
+ * @package  Applicant_Form_Shortcode
+ * @author   Nazrul Islam Nayan <nazrulislamnayan7@gmail.com>
+ * @license  GPL3 https://www.gnu.org/licenses/gpl-3.0.en.html
+ * @link     https://github.com/nayanchamp7/applicant-form
+ * @since    1.0.0
+ */
 namespace Application_Form;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-if ( ! class_exists( 'Applicant_Form_Shortcode' ) ) {
-	class Applicant_Form_Shortcode {
+if (! class_exists('Applicant_Form_Shortcode') ) {
+    /**
+     * Applicant_Form class
+     *
+     * @class Applicant_Form_Shortcode The class that manages shortcodes
+     *
+     * @category Base
+     * @package  Applicant_Form_Shortcode
+     * @author   Nazrul Islam Nayan <nazrulislamnayan7@gmail.com>
+     * @license  GPL3 https://www.gnu.org/licenses/gpl-3.0.en.html
+     * @link     https://github.com/nayanchamp7/applicant-form
+     * @property null|object $_instance Instance of the class
+     */
+    class Applicant_Form_Shortcode
+    {
 
         /**
          * Instance of self
          *
          * @var Applicant_Form_Shortcode
          */
-        private static $instance = null;
+        private static $_instance = null;
 
-		public function __construct() {
-			$this->includes();
-			$this->hooks();
-			$this->init();
-			do_action( 'afm_shortcode_loaded', $this );
-		}
-
-		public static function instance() {
-			if ( is_null( self::$instance ) ) {
-				self::$instance = new self();
-			}
-
-			return self::$instance;
-		}
-
-		public function includes() {
-			
-		}
-
-		public function hooks() {
-			// Register with hook
-			add_action( 'init', array( $this, 'register_shortcode' ), 1 );
-		}
-
-		public function init() {
-		}
-
-        public function register_shortcode() {
-            add_shortcode( 'applicant_form', array($this, 'applicant_form_callback') );
+        /**
+         * Class constructor
+         *
+         * Sets up all the appropriate hooks and functions
+         * within our plugin.
+         *
+         * @return void
+         */
+        public function __construct()
+        {
+            $this->hooks();
+            do_action('afm_shortcode_loaded', $this);
         }
 
-        public function applicant_form_callback($atts) {
-            $attributes = shortcode_atts( array(
+        /**
+         * Initializes class
+         *
+         * Checks for an existing instance
+         * and if it doesn't find one, create it.
+         * 
+         * @return object
+         */
+        public static function instance()
+        {
+            if (is_null(self::$_instance) ) {
+                self::$_instance = new self();
+            }
+
+            return self::$_instance;
+        }
+
+        /**
+         * All the executed hooks
+         * 
+         * @return void
+         */
+        public function hooks()
+        {
+            // Register with hook
+            add_action('init', array( $this, 'register_shortcode' ), 1);
+        }
+
+        /**
+         * Register shortcodes
+         * 
+         * @return void
+         */
+        public function register_shortcode()
+        {
+            add_shortcode('applicant_form', array($this, 'applicant_form_callback'));
+        }
+
+        /**
+         * Shortcode callback
+         * 
+         * @param array $args arguments
+         * 
+         * @return mixed
+         */
+        public function applicant_form_callback($args)
+        {
+            $attributes = shortcode_atts(
+                array(
                 'title' => false,
-            ), $atts );
+                ), $args 
+            );
 
             // enqueue form style files.
-            wp_enqueue_style( 'afm_styles' );
+            wp_enqueue_style('afm_styles');
             
             // enqueue form JS files.
-            wp_enqueue_script( 'afm_script' );
+            wp_enqueue_script('afm_script');
             
             ob_start();
 
@@ -65,5 +119,5 @@ if ( ! class_exists( 'Applicant_Form_Shortcode' ) ) {
         
             return ob_get_clean();
         }
-	}
+    }
 }

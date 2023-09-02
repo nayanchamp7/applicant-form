@@ -1,3 +1,15 @@
+<?php
+/**
+ * Form Template
+ *
+ * @category Template
+ * @package  Template
+ * @author   Nazrul Islam Nayan <nazrulislamnayan7@gmail.com>
+ * @license  GPL3 https://www.gnu.org/licenses/gpl-3.0.en.html
+ * @link     https://github.com/nayanchamp7/applicant-form
+ * @since    1.0.0
+ */
+?>
 <div class="afm-wrapper">
     <div class="afm-container">
         <h2>Applicant Form</h2>
@@ -9,7 +21,7 @@
                 <label for="first_name">First Name</label>
                 <input type="text" name="first_name" id="first_name" placeholder="John">
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>First name can't be empty.</p>
                 </div>
             </div>
@@ -18,7 +30,7 @@
                 <label for="last_name">Last Name</label>
                 <input type="text" name="last_name" id="last_name" placeholder="Doe">
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>Last name can't be empty.</p>
                 </div>
             </div>
@@ -27,7 +39,7 @@
                 <label for="email_address">Email Address</label>
                 <input type="email" name="email_address" id="email_address" placeholder="abc@gmail.com">
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>Email can't be empty.</p>
                 </div>
             </div>
@@ -36,7 +48,7 @@
                 <label for="mobile">Mobile</label>
                 <input type="tel" name="mobile" id="mobile" placeholder="019-00000000">
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>Mobile number can't be empty.</p>
                 </div>
             </div>
@@ -50,7 +62,7 @@
                     <option value="developer">Web Developer</option>
                 </select>
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>Post name can't be empty.</p>
                 </div>
             </div>
@@ -59,7 +71,7 @@
                 <label for="present_address">Present Address</label>
                 <textarea name="present_address" id="present_address" cols="30" rows="10"></textarea>
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>Present can't be empty.</p>
                 </div>
             </div>
@@ -68,12 +80,12 @@
                 <label for="resume">CV</label>
                 <input type="file" name="resume" id="resume">
 
-                <div class="afm-error-message">
+                <div class="afm-error-message afm-hide">
                     <p>CV can't be empty.</p>
                 </div>
             </div>
 
-            <input type="hidden" id="_wpnonce" name="_wpnonce" value="<?php echo wp_create_nonce( 'afm_form_nonce' ); ?>">
+            <input type="hidden" id="_wpnonce" name="_wpnonce" value="<?php echo wp_create_nonce('afm_form_nonce'); ?>">
             <input type="submit" value="Apply">
         </form>
     </div>

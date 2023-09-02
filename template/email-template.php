@@ -1,5 +1,16 @@
+<?php
+/**
+ * Email Template
+ *
+ * @category Template
+ * @package  Template
+ * @author   Nazrul Islam Nayan <nazrulislamnayan7@gmail.com>
+ * @license  GPL3 https://www.gnu.org/licenses/gpl-3.0.en.html
+ * @link     https://github.com/nayanchamp7/applicant-form
+ * @since    1.0.0
+ */
+?>
 <!DOCTYPE html>
-
 <html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
 <title></title>
@@ -8,107 +19,107 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter&family=Work+Sans:wght@700&display=swap" rel="stylesheet" type="text/css"/><!--<![endif]-->
 <style>
-		* {
-			box-sizing: border-box;
-		}
+        * {
+            box-sizing: border-box;
+        }
 
-		body {
-			margin: 0;
-			padding: 0;
-		}
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
-		a[x-apple-data-detectors] {
-			color: inherit !important;
-			text-decoration: inherit !important;
-		}
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: inherit !important;
+        }
 
-		#MessageViewBody a {
-			color: inherit;
-			text-decoration: none;
-		}
+        #MessageViewBody a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-		p {
-			line-height: inherit
-		}
+        p {
+            line-height: inherit
+        }
 
-		.desktop_hide,
-		.desktop_hide table {
-			mso-hide: all;
-			display: none;
-			max-height: 0px;
-			overflow: hidden;
-		}
+        .desktop_hide,
+        .desktop_hide table {
+            mso-hide: all;
+            display: none;
+            max-height: 0px;
+            overflow: hidden;
+        }
 
-		.image_block img+div {
-			display: none;
-		}
+        .image_block img+div {
+            display: none;
+        }
 
-		@media (max-width:720px) {
-			.desktop_hide table.icons-inner {
-				display: inline-block !important;
-			}
+        @media (max-width:720px) {
+            .desktop_hide table.icons-inner {
+                display: inline-block !important;
+            }
 
-			.icons-inner {
-				text-align: center;
-			}
+            .icons-inner {
+                text-align: center;
+            }
 
-			.icons-inner td {
-				margin: 0 auto;
-			}
+            .icons-inner td {
+                margin: 0 auto;
+            }
 
-			.mobile_hide {
-				display: none;
-			}
+            .mobile_hide {
+                display: none;
+            }
 
-			.row-content {
-				width: 100% !important;
-			}
+            .row-content {
+                width: 100% !important;
+            }
 
-			.stack .column {
-				width: 100%;
-				display: block;
-			}
+            .stack .column {
+                width: 100%;
+                display: block;
+            }
 
-			.mobile_hide {
-				min-height: 0;
-				max-height: 0;
-				max-width: 0;
-				overflow: hidden;
-				font-size: 0px;
-			}
+            .mobile_hide {
+                min-height: 0;
+                max-height: 0;
+                max-width: 0;
+                overflow: hidden;
+                font-size: 0px;
+            }
 
-			.desktop_hide,
-			.desktop_hide table {
-				display: table !important;
-				max-height: none !important;
-			}
+            .desktop_hide,
+            .desktop_hide table {
+                display: table !important;
+                max-height: none !important;
+            }
 
-			.reverse {
-				display: table;
-				width: 100%;
-			}
+            .reverse {
+                display: table;
+                width: 100%;
+            }
 
-			.reverse .column.last {
-				display: table-header-group !important;
-			}
+            .reverse .column.last {
+                display: table-header-group !important;
+            }
 
-			.row-2 td.column.last .border {
-				padding: 30px 25px 25px;
-				border-top: 0;
-				border-right: 0px;
-				border-bottom: 0;
-				border-left: 0;
-			}
+            .row-2 td.column.last .border {
+                padding: 30px 25px 25px;
+                border-top: 0;
+                border-right: 0px;
+                border-bottom: 0;
+                border-left: 0;
+            }
 
-			.row-1 .column-1 {
-				padding: 50px 30px 0 !important;
-			}
+            .row-1 .column-1 {
+                padding: 50px 30px 0 !important;
+            }
 
-			.row-2 .column-1 .border {
-				padding: 35px 30px !important;
-			}
-		}
-	</style>
+            .row-2 .column-1 .border {
+                padding: 35px 30px !important;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: #f7f7f7; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
 <table border="0" cellpadding="0" cellspacing="0" class="nl-container" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f7f7f7;" width="100%">
