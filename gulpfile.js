@@ -150,7 +150,7 @@ gulp.task(
 			.pipe( notify( {message: 'Zipping Completed! 💯', onLast: true} ) );
 	}
 );
-gulp.task( 'build', gulp.series( 'compile:js', 'compile:scss', 'compile:public:scss', 'makePot' ) );
+gulp.task( 'build', gulp.series( 'compile:js', 'compile:scss', 'compile:public:scss' ) );
 gulp.task(
 	'watch',
 	function () {

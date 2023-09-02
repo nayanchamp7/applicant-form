@@ -137,7 +137,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="heading_block block-1" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="text-align:center;width:100%;">
-<h2 style="margin: 0; color: #201f42; direction: ltr; font-family: 'Noto Serif', Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">We have successfully recieved your response.</span></h2>
+<h2 style="margin: 0; color: #201f42; direction: ltr; font-family: 'Noto Serif', Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder"><?php esc_html_e('We have successfully recieved your response.', 'application-form'); ?></span></h2>
 </td>
 </tr>
 </table>
@@ -174,7 +174,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="heading_block block-1" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:20px;padding-top:5px;text-align:center;width:100%;">
-<h1 style="margin: 0; color: #4f5aba; direction: ltr; font-family: 'Noto Serif', Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">Thank you</span><span style="color: #dd1616;margin-left: 10px;"><?php esc_html_e($args["reciever_name"]); ?></span></h1>
+<h1 style="margin: 0; color: #4f5aba; direction: ltr; font-family: 'Noto Serif', Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder"><?php esc_html_e('Thank you', 'application-form'); ?></span><span style="color: #dd1616;margin-left: 10px;"><?php echo $args["reciever_name"]; ?></span></h1>
 </td>
 </tr>
 </table>
@@ -182,7 +182,7 @@
 <tr>
 <td class="pad" style="padding-bottom:10px;padding-top:10px;">
 <div style="color:#515151;direction:ltr;font-family:Inter, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:180%;text-align:center;mso-line-height-alt:28.8px;">
-<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing consequat, cursus platea at nec vestibulum amet. Ullamcorper congue proin cursus mi feugiat sodales arcu leo aliquam. Ullamcorper congue proin cursus mi feugiat sodales arcu leo aliquam. </p>
+<p style="margin: 0;"><?php esc_html_e('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing consequat, cursus platea at nec vestibulum amet. Ullamcorper congue proin cursus mi feugiat sodales arcu leo aliquam. Ullamcorper congue proin cursus mi feugiat sodales arcu leo aliquam.', 'application-form'); ?></p>
 </div>
 </td>
 </tr>

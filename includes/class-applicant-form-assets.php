@@ -102,9 +102,15 @@ if (! class_exists('Applicant_Form_Assets') ) {
             // Register form script.
             wp_register_script('afm_script', AFM_PLUGIN_URL . '/assets/public/js/script.js', array( 'jquery' ), time(), true);
             wp_localize_script(
-                'afm_script', 'afm_script', [
-                'ajaxurl' => admin_url('admin-ajax.php'),
-                ] 
+                'afm_script', 'afm_script', array(
+                    'ajaxurl' => admin_url('admin-ajax.php'),
+                    'form_messages' => array(
+                        "email_invalid" => __("Invalid email", "application-form"),
+                        "mobile_invalid" => __("Invalid mobile number", "application-form"),
+                        "resume_invalid" => __("Please add (jpg, jpeg, png, gif, webp) file", "application-form"),
+                        "empty" => __("Field can't be empty", "application-form"),
+                    )
+                ) 
             );
 
         }
